@@ -2,11 +2,12 @@
 include "home.php";
 $con=mysqli_connect("localhost","root","","tuition");
 if (isset($_POST['submit'])) {
-  $STUDENTID=$_POST["STUDENTID"];
+  // $STUDENTID=$_POST["STUDENTID"];
   $NAME=$_POST["NAME"];
+  $SCHOOLNAME=$_POST["SCHOOLNAME"];
   $PHONENUMBER=$_POST["PHONENUMBER"];
   $EMAILID=$_POST["EMAILID"];
-  $SCHOOLNAME=$_POST["SCHOOLNAME"];
+  $AGE=$_POST["AGE"];
   $DATEOFBIRTH=$_POST["DATEOFBIRTH"];
   $FATHERNAME=$_POST["FATHERNAME"];
   $MOTHERNAME=$_POST["MOTHERNAME"];
@@ -14,8 +15,10 @@ if (isset($_POST['submit'])) {
   $CASTE=$_POST["CASTE"];
   $ADDRESS=$_POST["ADDRESS"];
   $COURSEOPTION=$_POST["COURSEOPTION"];
-  $reg="INSERT INTO front(STUDENTID,NAME,PHONENUMBER,EMAILID,SCHOOLNAME,DATEOFBIRTH,FATHERNAME,MOTHERNAME,GENDER,CASTE,ADDRESS,COURSEOPTION)VALUES('$STUDENTID','$NAME','$PHONENUMBER','$EMAILID','$SCHOOLNAME','$DATEOFBIRTH','$FATHERNAME','$MOTHERNAME','$GENDER','$CASTE','$ADDRESS','$COURSEOPTION')";
-  $query_run=mysqli_query($con,$reg);
+  echo '$NAME';
+  $reg="INSERT INTO front(NAME,PHONENUMBER,EMAILID,AGE,SCHOOLNAME,DATEOFBIRTH,FATHERNAME,MOTHERNAME,GENDER,CASTE,ADDRESS,COURSEOPTION)VALUES('$NAME','$PHONENUMBER','$EMAILID','$AGE','$SCHOOLNAME','$DATEOFBIRTH','$FATHERNAME','$MOTHERNAME','$GENDER','$CASTE','$ADDRESS','$COURSEOPTION')";
+  
+  $query_run=mysqli_query($con,$reg) or die(mysqli_error($con));
   if($query_run)
   {
   echo '<script>alert("ADMISSION SUCCESSFUL")</script>';
@@ -78,7 +81,7 @@ if (isset($_POST['submit'])) {
            
            <div class="form-group col-md-6">
              <label for="inputPassword4">Age</label>
-             <input type="email" class="form-control" id="inputPassword4" name="Age" placeholder="Age">
+             <input type="text" class="form-control" id="inputPassword4" name="AGE" placeholder="Age">
            </div>
            <div class="form-group col-md-6">
            <label for="inputPassword3" class="col-sm-2 col-form-label">Gender</label>
@@ -140,14 +143,14 @@ if (isset($_POST['submit'])) {
            </div>
            <div class="form-group col-md-6">
              <label for="inputPassword4">Subject</label>
-             <input type="email" class="form-control" id="inputPassword4" name="SUBJECT" placeholder="Subject">
+             <input type="text" class="form-control" id="inputPassword4" name="SUBJECT" placeholder="Subject">
            </div>
         </div>
         <div class="form-row">
-           <div class="form-group col-md-6 colimg">
+           <!-- <div class="form-group col-md-6 colimg">
             <label class="label col-md-3 control-label">image</label>
             <input type="file" class="form-control"  name="uploadfile" value=""/>
-           </div>
+           </div> -->
            <div class="form-group col-md-6">
              <label for="inputPassword4">Address</label>
              <textarea class="form-control" rows="5" id="comment" placeholder="enter your address" name="ADDRESS"></textarea>
