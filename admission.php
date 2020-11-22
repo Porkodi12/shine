@@ -15,10 +15,10 @@ if (isset($_POST['submit'])) {
   $CASTE=$_POST["CASTE"];
   $ADDRESS=$_POST["ADDRESS"];
   $COURSEOPTION=$_POST["COURSEOPTION"];
-  echo '$NAME';
   $reg="INSERT INTO front(NAME,PHONENUMBER,EMAILID,AGE,SCHOOLNAME,DATEOFBIRTH,FATHERNAME,MOTHERNAME,GENDER,CASTE,ADDRESS,COURSEOPTION)VALUES('$NAME','$PHONENUMBER','$EMAILID','$AGE','$SCHOOLNAME','$DATEOFBIRTH','$FATHERNAME','$MOTHERNAME','$GENDER','$CASTE','$ADDRESS','$COURSEOPTION')";
   
   $query_run=mysqli_query($con,$reg) or die(mysqli_error($con));
+  echo $query_run;
   if($query_run)
   {
   echo '<script>alert("ADMISSION SUCCESSFUL")</script>';
@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
       </div>
     
       <div class="container-body">
-         <form>
+         <form method="POST" action="">
          <div class="title">Student details</div>
          <div class="form-row top">
            <div class="form-group col-md-6">
@@ -70,7 +70,8 @@ if (isset($_POST['submit'])) {
         <div class="form-row">
            <div class="form-group col-md-6">
              <label for="inputEmail4">Phone No.</label>
-             <input type="text" class="form-control" id="inputEmail4" name="ph_no" placeholder="PHONENUMBER">
+             <input type="text" class="form-control" id="inputEmail4"
+              name="PHONENUMBER" placeholder="PHONENUMBER">
            </div>
            <div class="form-group col-md-6">
              <label for="inputPassword4">Email</label>
@@ -87,10 +88,10 @@ if (isset($_POST['submit'])) {
            <label for="inputPassword3" class="col-sm-2 col-form-label">Gender</label>
                   <div class="col-sm">
                         <label class="radio-inline ">
-                          <input type="radio" name="gender">&nbsp;Male
+                          <input type="radio" name="GENDER">&nbsp;Male
                         </label>
                         <label class="radio-inline ">
-                          <input type="radio" name="gender">&nbsp;Female
+                          <input type="radio" name="GENDER">&nbsp;Female
                         </label>
                   </div>
            </div>

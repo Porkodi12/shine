@@ -18,8 +18,8 @@ include "home.php";
 <body>
 <center>
 <div class="container">
-     
-     <div class="container-head">
+
+      <div class="container-head">
          <div class="title">
          <center><h1>Student Announcement</h1></center>
          </div>

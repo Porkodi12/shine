@@ -22,7 +22,7 @@ $con=mysqli_connect("localhost","root","","tuition");
      
      <div class="container-head">
          <div class="title">
-         <center><h1>Student Attendence</h1></center>
+         <center><h1>Student Attendence </h1></center>
          </div>
      </div>
      <div class="container-body">

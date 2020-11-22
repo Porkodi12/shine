@@ -23,119 +23,79 @@ include "home.php";
 ">
 </head>
 <body>
-  <style>
-   body
-   {
-    margin:0;
-    padding:0;
-    background-color:transparent;
-   }
-   .box
-   {
-    width:600px;
-    padding:20px;
-    background-color:transparent;
-    border:1px solid #ccc;
-    border-radius:5px;
-    margin-top:25px;
-   }
-  </style>
-<center>
-<div class="container box">
-     
-     <div class="container-head">
-         <div class="title">
-         <center><h1>Time Table</h1></center>
-         </div>
-     </div>
-     <div class="container">
-   
-   <div class="table-responsive">
-    <br />
-    <div class="row"> 
-     <div class="input-daterange">
-      <div class="col">
-       <input type="text" name="start_date" id="start_date" class="form-control" />
-      </div>
-    </div>
+  <center>
 
-      <div class="row">
-      <div class="input-daterange">
-      <div class="col">
-       <input type="text" name="end_date" id="end_date" class="form-control" />
-      </div>      
-     </div>
-   </div>
+   <div class="container">
+       
+       <div class="container-head">
+           <div class="title">
+           <center><h1>Search Student</h1></center>
+           </div>
+       </div>
+       <div class="container-body">
+          <form action="" method="POST">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                      <input type="date" class="form-control" id="start_date" 
+                      name="start_date" placeholder="start_date">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <input type="date" class="form-control" id="end_date" name="end_date" placeholder="end_date">
+                    </div>
+                    <div class="form-group  col-md-2">
+                          <center>
+                            <input  type="submit" id="search"  name="search" Value="search" class="btn btn-primary ">
+                          </center> 
+                    </div>
+                </div>
+            
 
-      <div class="col">
-      <input type="button" name="search" id="search" value="Search" class="btn btn-info" />
-     </div> 
-    </div>
-    <br>
-    <!-- <center> -->
-    <table id="order_data" class="table table-bordered">
-     <thead>
+          <table class="table table-bordered ">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Start time</th>
+                <th >End time</th>
+                <th style="padding-left: 100px">Date</th>
+              </tr>
+            </thead>
+          <tbody>
+            <?php
+  $con=mysqli_connect("localhost","root","","tuition");
+    
+    
+    if (isset($_POST['search'])) {
+      $start_date=$_POST['start_date'];
+    $end_date=$_POST['end_date'];
+    $query="SELECT * FROM timetable WHERE order_date between '$start_date' 
+    and '$end_date' ";
+    }
+    else{
+      $query="SELECT * FROM timetable "; 
+           }
+    
+    $query_run=mysqli_query($con,$query) or die(mysqli_error($con));
+    while ($row=mysqli_fetch_array($query_run)) {
+      ?>
       <tr>
-       <th scope="col">ID</th>
-       <th scope="col">Student Name</th>
-       <th scope="col">Start Time</th>
-       <th scope="col">End Time</th>
-       <th scope="col">Date</th>
-      </tr>
-     </thead>
-    </table>
-    </center>
-   </div>
-  </div>
-</div>
-   </div>
+     
+    <td ><?php echo $row['order_id'];?></td>
+    <td><?php echo $row['order_student_name'];?></td>
+    <td><?php echo $row['order_stime'];?></td>
+    <td><?php echo $row['order_etime'];?></td>
+    <td><?php echo $row['order_date'];?></td>
+    </tr>       
 
-</center>
+    <?php
+    }
+  
+  ?>
+            
+            </tbody>
+              <form>
+         </div>
+    </div>
 </body>
 
-
-
-<script type="text/javascript" language="javascript" >
-$(document).ready(function(){
- 
- $('.input-daterange').datepicker({
-  todayBtn:'linked',
-  format: "yyyy-mm-dd",
-  autoclose: true
- });
-
- fetch_data('no');
-
- function fetch_data(is_date_search, start_date='', end_date='')
- {
-  var dataTable = $('#order_data').DataTable({
-   "processing" : true,
-   "serverSide" : true,
-   "order" : [],
-   "ajax" : {
-    url:"fetch.php",
-    type:"POST",
-    data:{
-     is_date_search:is_date_search, start_date:start_date, end_date:end_date
-    }
-   }
-  });
- }
-
- $('#search').click(function(){
-  var start_date = $('#start_date').val();
-  var end_date = $('#end_date').val();
-  if(start_date != '' && end_date !='')
-  {
-   $('#order_data').DataTable().destroy();
-   fetch_data('yes', start_date, end_date);
-  }
-  else
-  {
-   alert("Both Date is Required");
-  }
- }); 
- 
-});
-</script>
 </html>

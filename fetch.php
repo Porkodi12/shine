@@ -61,13 +61,13 @@ function get_all_data($con)
  return mysqli_num_rows($result);
 }
 
-$output = array(
- "draw"    => intval($_POST["draw"]),
- "recordsTotal"  =>  get_all_data($con),
- "recordsFiltered" => $number_filter_row,
- "data"    => $data
-);
+// $output = array(
+//  "draw"    => intval($_POST["draw"]),
+//  "recordsTotal"  =>  get_all_data($con),
+//  "recordsFiltered" => $number_filter_row,
+//  "data"    => $data
+// );
 
-echo json_encode($output);
+// echo json_encode($output);
 
 ?>

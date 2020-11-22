@@ -98,6 +98,10 @@ $con=mysqli_connect("localhost","root","","tuition");
     $CLASS=$_POST['CLASS'];
     $SUBJECTNAME=$_POST['SUBJECTNAME'];
     $query="SELECT CLASS,SUBJECTNAME,coursefile FROM course WHERE CLASS='$CLASS' AND SUBJECTNAME='$SUBJECTNAME'";
+  }
+  else{
+    $query="SELECT CLASS,SUBJECTNAME,coursefile FROM course";
+  }
     $result=mysqli_query($con,$query);
     if(mysqli_num_rows($result)>0){
     while ($row=mysqli_fetch_array($result)) {
@@ -115,7 +119,7 @@ $con=mysqli_connect("localhost","root","","tuition");
     <?php
     }
   }
-}
+
   ?>
   </tbody>
 </table>  
