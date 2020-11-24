@@ -41,7 +41,7 @@ body {
   margin: 0;
   padding: 1rem 0 0 5rem;
   font-family: var(--body-font);
-  background-color: var(--white-color);
+   background-color: var(--white-color);
   -webkit-transition: .5s;
   transition: .5s;
 }
@@ -140,7 +140,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: .5rem;
+  padding: 10px;
   margin-bottom: 1rem;
   border-radius: .5rem;
   color: var(--white-color);
@@ -160,6 +160,7 @@ a {
 
 .nav__text {
   font-weight: 700;
+  font-size: 1.5rem;
 }
 
 /*Show menu*/

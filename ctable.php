@@ -78,10 +78,87 @@ echo "No result found";
           </table>
           <!-- table end -->
         <form>
+          
      </div>
 
    </div>
 
 </center>
+
+</br><br>
+
+<div class="container">
+       
+       <div class="container-head">
+           <div class="title">
+           <center><h1>Exam TimeTable</h1></center>
+           </div>
+       </div>
+       <div class="container-body">
+          <form action="" method="POST">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                      <input type="date" class="form-control" id="start_date" 
+                      name="start_date" placeholder="start_date">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <input type="date" class="form-control" id="end_date" name="end_date" placeholder="end_date">
+                    </div>
+                    <div class="form-group  col-md-2">
+                          <center>
+                            <input  type="submit" id="search"  name="search" Value="search" class="btn btn-primary ">
+                          </center> 
+                    </div>
+                </div>
+            
+
+          <table class="table table-bordered ">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Start time</th>
+                <th >End time</th>
+                <th style="padding-left: 100px">Date</th>
+              </tr>
+            </thead>
+          <tbody>
+            <?php
+  $con=mysqli_connect("localhost","root","","tuition");
+    
+    
+    if (isset($_POST['search'])) {
+      $start_date=$_POST['start_date'];
+    $end_date=$_POST['end_date'];
+    $query="SELECT * FROM timetable WHERE order_date between '$start_date' 
+    and '$end_date' ";
+    }
+    else{
+      $query="SELECT * FROM timetable "; 
+           }
+    
+    $query_run=mysqli_query($con,$query) or die(mysqli_error($con));
+    while ($row=mysqli_fetch_array($query_run)) {
+      ?>
+      <tr>
+     
+    <td ><?php echo $row['order_id'];?></td>
+    <td><?php echo $row['order_student_name'];?></td>
+    <td><?php echo $row['order_stime'];?></td>
+    <td><?php echo $row['order_etime'];?></td>
+    <td><?php echo $row['order_date'];?></td>
+    </tr>       
+
+    <?php
+    }
+  
+  ?>
+            
+            </tbody>
+              <form>
+         </div>
+    </div>
+
+
 </body>
 </html>
