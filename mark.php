@@ -1,5 +1,6 @@
 <?php
-include "home.php";
+// include "home.php";
+include "admin/nav.php";
 include_once "connection.php";
 ?>
 
@@ -62,6 +63,7 @@ include_once "connection.php";
           <table class="table table-bordered">
             <thead class="thead-dark">
               <tr>
+                <th scope="col">Test</th>
                 <th scope="col">Tamil</th>
                 <th scope="col">English</th>
                 <th scope="col">Maths</th>
@@ -83,6 +85,7 @@ include_once "connection.php";
                      {
                         ?>
                         <tr>
+                            <td> <?php echo $row['test']; ?></td>
                             <td> <?php echo $row['tamil']; ?></td>
                             <td> <?php echo $row['english']; ?></td>
                             <td> <?php echo $row['maths']; ?></td>
@@ -96,40 +99,7 @@ include_once "connection.php";
                     }
                                     }
                                     ?>
-            <!-- <?php
-	$con=mysqli_connect("localhost","root","","tution_management");
-    
-    
-    if (isset($_POST['search'])) {
-      $STUDENTID=$_POST['STUDENTID'];
-    $COURSEOPTION=$_POST['COURSEOPTION'];
-    $query="SELECT * FROM students WHERE student_id='$STUDENTID' or course='$COURSEOPTION' ";
-    }
-    else{
-      $query="SELECT * FROM students "; 
-           }
-    
-		$query_run=mysqli_query($con,$query) or die(mysqli_error($con));
-		while ($row=mysqli_fetch_array($query_run)) {
-			?>
-			<tr>
-     
-		<td><?php echo $row['student_id'];?></td>
-		<td><?php echo $row['first_name'];?></td>
-		<td><?php echo $row['last_name'];?></td>
-    <td><?php echo $row['course'];?></td>
-    <td><?php echo $row['email'];?></td>
-		<td><?php echo $row['ph_no'];?></td>
-		<td><a href="edit_student.php?student_id=<?php echo $row['student_id']; ?>" class="edit"> <i class="fa fa-pencil "></i>&nbsp;Edit</a></td>
-		<td><a href="delete_student.php?student_id=<?php echo $row['student_id']; ?>" class="delete"> <i class="fa fa-trash "></i>&nbsp;Delete</a></td>
-		
-		</tr>				
-
-		<?php
-		}
-	
-	?> -->
-            
+                   
             </tbody>
           </table>
           <!-- table end -->

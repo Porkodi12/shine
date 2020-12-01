@@ -1,5 +1,6 @@
 <?php
-include "home.php";
+// include "home.php";
+include "admin/nav.php";
 include_once "connection.php";
 ?>
 
@@ -124,7 +125,7 @@ echo "No result found";
             </thead>
           <tbody>
             <?php
-  $con=mysqli_connect("localhost","root","","tuition");
+  // $con=mysqli_connect("localhost","root","","tuition");
     
     
     if (isset($_POST['search'])) {

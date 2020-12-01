@@ -1,6 +1,6 @@
 <?php 
 
-include "../admin/nav.php";
+include "admin/nav.php";
 
 ?>
 
@@ -14,7 +14,7 @@ include "../admin/nav.php";
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/dash.css">
+    <link rel="stylesheet" type="text/css" href="css/dash.css">
     <title>hover</title>
 </head>
 
@@ -23,15 +23,15 @@ include "../admin/nav.php";
     <div class="container">
         <div class="row">
               <div class="box">
-                <a href="profile.php" class="reference">
+                <a href="admission.php" class="reference">
                     <div class="imgBx">
-                        <img src="../images/user.png">
+                        <img src="images/user.png">
                     </div>
                     <div class="content">
                         <div class="icon">
-                            <img src="../images/user.png">
+                            <img src="images/user.png">
                         </div>
-                        <h3>Profile</h3>
+                        <h3>admission</h3>
                         <!-- <h4>12345</h4>
                         <h4>34535</h4> -->
                     </div>
@@ -40,15 +40,15 @@ include "../admin/nav.php";
             
             
               <div class="box">
-                <a href="../admin/admission.php" class="reference">
+                <a href="attendence.php" class="reference">
                     <div class="imgBx">
-                        <img src="../images/edit.png">
+                        <img src="images/edit.png">
                     </div>
                     <div class="content">
                         <div class="icon">
-                            <img src="../images/edit.png">
+                            <img src="images/edit.png">
                         </div>
-                        <h3>admission</h3>
+                        <h3>Attendence</h3>
                         <!-- <h4>12345</h4>
                         <h4>34535</h4> -->
                     </div>
@@ -56,30 +56,30 @@ include "../admin/nav.php";
             </div>
 
             <div class="box">
-                <a href="../admin/add_staff.php" class="reference">
+                <a href="class.php" class="reference">
                     <div class="imgBx">
-                        <img src="../images/add-group.png">
+                        <img src="images/add-group.png">
                     </div>
                     <div class="content">
                         <div class="icon">
-                            <img src="../images/add-group.png">
+                            <img src="images/add-group.png">
                         </div>
-                        <h3>Add Staff</h3>
+                        <h3>Class</h3>
                         <!-- <h4>12345</h4>
                         <h4>34535</h4> -->
                     </div>
                 </a>
             </div>
             <div class="box">
-                <a href="../admin/add_fees.php" class="reference">
+                <a href="course.php" class="reference">
                     <div class="imgBx">
-                        <img src="../images/hand.png">
+                        <img src="images/upload.png">
                     </div>
                     <div class="content">
                         <div class="icon">
-                            <img src="../images/hand.png">
+                            <img src="images/upload.png">
                         </div>
-                        <h3>Fees Management</h3>
+                        <h3>Course</h3>
                         <!-- <h4>12345</h4>
                         <h4>34535</h4> -->
                     </div>
@@ -89,64 +89,83 @@ include "../admin/nav.php";
 
         <div class="row">
              <div class="box">
-                <a href="../admin/view_student.php" class="reference">
+                <a href="ctable.php" class="reference">
                     <div class="imgBx">
-                        <img src="../images/group.png">
+                        <img src="images/table.png">
                     </div>
                     <div class="content">
                         <div class="icon">
-                            <img src="../images/group.png">
+                            <img src="images/table.png">
                         </div>
-                        <h3>View Student</h3>
+                        <h3>Time Table </h3>
                         <!-- <h4>12345</h4>
                         <h4>34535</h4> -->
                     </div>
                 </a>
              </div>
              <div class="box">
-                <a href="../admin/course" class="reference">
+                <a href="fees.php" class="reference">
                     <div class="imgBx">
-                        <img src="../images/upload.png">
+                        <img src="images/hand.png">
                     </div>
                     <div class="content">
                         <div class="icon">
-                            <img src="../images/upload.png">
+                            <img src="images/hand.png">
                         </div>
-                        <h3>Course Mangement </h3>
+                        <h3>Fees</h3>
                         <!-- <h4>12345</h4>
                         <h4>34535</h4> -->
                     </div>
                 </a>
              </div>
              <div class="box">
-                <a href="../admin/attendance.php" class="reference">
+                <a href="announce.php" class="reference">
                     <div class="imgBx">
-                        <img src="../images/list.png">
+                        <img src="images/announcement.png">
                     </div>
                     <div class="content">
                         <div class="icon">
-                            <img src="../images/list.png">
+                            <img src="images/announcement.png">
                         </div>
-                        <h3>Attendance</h3>
+                        <h3>Announcement</h3>
                     </div>
                 </a>
               </div>
               <div class="box">
-                <a href="announcement" class="reference">
+                <a href="mark.php" class="reference">
                     <div class="imgBx">
-                        <img src="../images/announcement.png">
+                        <img src="images/mark.png">
                     </div>
                     <div class="content">
                         <div class="icon">
-                            <img src="../images/announcement.png">
+                            <img src="images/mark.png">
                         </div>
-                        <h3>Announcement</h3>
+                        <h3>Mark</h3>
                         <!-- <h4>12345</h4>
                         <h4>34535</h4> -->
                     </div>
                 </a>
               </div>
         </div>
+
+         <div class="row">
+             <div class="box">
+                <a href="feedback.php" class="reference">
+                    <div class="imgBx">
+                        <img src="images/feedback.png">
+                    </div>
+                    <div class="content">
+                        <div class="icon">
+                            <img src="images/feedback.png">
+                        </div>
+                        <h3>Feedback</h3>
+                        <!-- <h4>12345</h4>
+                        <h4>34535</h4> -->
+                    </div>
+                </a>
+             </div>
+             
+         </div>
 <!-- 
         <div class="row">
               <div class="box">

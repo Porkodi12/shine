@@ -1,6 +1,7 @@
 <?php
-include "home.php";
+// include "home.php";
 // $con=mysqli_connect("localhost","root","","tuition");
+include "admin/nav.php";
 include_once "connection.php";
 ?>
 

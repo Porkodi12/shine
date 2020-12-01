@@ -1,5 +1,6 @@
 <?php
-include "home.php";
+// include "home.php";
+include "admin/nav.php";
 include_once "connection.php";
 ?>
 
