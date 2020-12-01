@@ -6,7 +6,7 @@
         <!-- STYLES CSS -->
         <!-- BOX ICONS CSS-->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-        <link href='../css/nav.css' rel='stylesheet'>
+        <link href='css/nav.css' rel='stylesheet'>
         <title>TUITION MANAGEMENT</title>
     </head>
     <form action="" method="POST">
@@ -24,49 +24,49 @@
                     </div>
     
                     <ul class="nav__list">
-                        <a href="coursemanage.php" class="nav__link">
+                        <a href="dash_board.php" class="nav__link">
                             <i class='bx bx-grid-alt nav__icon'></i>
                             <span class="nav__text">Home</span>
 
                         </a>
                         <a href="admission.php" class="nav__link">
-                            <i class='bx bx-edit nav__icon' ></i>
+                            <i class='bx bx-user-circle nav__icon' ></i>
                             <span class="nav__text">
                             Admission  
                             </span>
                         </a>
-                        <a href="add_staff.php" class="nav__link">
-                            <i class='bx bx-user-plus nav__icon' ></i>
-                            <span class="nav__text">Add Staff</span>
+                        <a href="attendence.php" class="nav__link">
+                            <i class='bx bx-calendar-check nav__icon'></i>
+                              <span class="nav__text">Attendence</span>
+                        </a> 
+                        <a href="course.php" class="nav__link">
+                            <i class='bx bx-download nav__icon' ></i>
+                            <span class="nav__text">Course</span>
                         </a>
-                        <a href="attendance
+                        <a href="fees
                         .php" class="nav__link">
-                            <i class='bx bx-calendar-check nav__icon' ></i>
-                            <span class="nav__text">Attendance</span>
+                            <i class='bx bx-dollar nav__icon' ></i>
+                            <span class="nav__text">Fees</span>
                         </a>
-                        <a href="add_fees.php" class="nav__link">
-                            <i class='bx bx-money nav__icon' ></i>
-                            <span class="nav__text">Pay Fees</span>
+                        <a href="class.php" class="nav__link">
+                            <i class='bx bx-book-open nav__icon' ></i>
+                            <span class="nav__text">Live Class</span>
                         </a>
-                        <a href="add_fees_type.php" class="nav__link">
-                            <i class='bx bx-bell nav__icon' ></i>
-                            <span class="nav__text">Add Fees <br> 
-                            Type</span>
+                        <a href="ctable.php" class="nav__link">
+                            <i class='bx bx-clipboard nav__icon' ></i>
+                            <span class="nav__text">Time Table</span>
                         </a>
-                        <a href="announcement.php" class="nav__link">
-                            <i class='bx bx-bell nav__icon' ></i>
+                        <a href="mark.php" class="nav__link">
+                            <i class='bx bx-trophy nav__icon' ></i>
+                            <span class="nav__text">Mark</span>
+                        </a>
+                        <a href="announce.php" class="nav__link">
+                            <i class='bx bx-bell-plus nav__icon'></i>
                             <span class="nav__text">Announcement</span>
                         </a>
-                        <a href="liveclass.php" class="nav__link">
-                            <i class='bx bx-heart nav__icon'></i>
-                            <span class="nav__text">
-                               Live <br>  Classes 
-                            </span>
-                        </a>
-                        <a href="markuptation.php" class="nav__link">
-                            <i class='bx bx-award nav__icon'></i>
-                              <span class="nav__text">Student<br>
-                               Marks</span>
+                        <a href="feedback.php" class="nav__link">
+                            <i class='bx bx-message nav__icon'></i>
+                              <span class="nav__text">Feedback</span>
                         </a>
                         <!-- <a href="staff_fee.php" class="nav__link">
                             <i class='bx bx-message-rounded nav__icon' ></i>
@@ -89,5 +89,5 @@
     </body>
   </form>
     <!-- MAIN JS -->
-    <script src="../js/nav.js"></script>
+    <script src="js/nav.js"></script>
 </html>   
