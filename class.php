@@ -1,6 +1,6 @@
 <?php
 include "home.php";
-
+include_once "connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +42,7 @@ include "home.php";
             </thead>
             <tbody>
              <?php
-  $con=mysqli_connect("localhost","root","","tuition");
+  // $con=mysqli_connect("localhost","root","","tuition");
     
     $query="SELECT * FROM liveclass";
     $query_run=mysqli_query($con,$query);

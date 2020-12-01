@@ -1,6 +1,6 @@
 <?php
 include "home.php";
-
+include_once "connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ include "home.php";
             </thead>
             <tbody>
              <?php
-      $con=mysqli_connect("localhost","root","","tuition");
+      // $con=mysqli_connect("localhost","root","","tuition");
   if (isset($_POST['filter_value'])) {
     $value=$_POST['STUDENTID'];
     $query="SELECT fee.STUDENTID, front.NAME, front.COURSEOPTION,fee.FEESTATUS

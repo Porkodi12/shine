@@ -1,5 +1,6 @@
 <?php
 include "home.php";
+include_once "connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +41,7 @@ include "home.php";
             </thead>
             <tbody>
               <?php
-      $con=mysqli_connect("localhost","root","","tuition");
+      // $con=mysqli_connect("localhost","root","","tution_management");
       
         $query="SELECT * FROM announcement";
         $result=mysqli_query($con,$query);
@@ -52,11 +53,11 @@ include "home.php";
           <td><?php echo $row['chk'];?>
           <input type="hidden" name="chk" value="<?php echo $row['chk'];?>">  
           </td>
-          <td><?php echo $row['SUBJECT'];?>
-          <input type="hidden" name="SUBJECT" value="<?php echo $row['SUBJECT'];?>">  
+          <td><?php echo $row['subject'];?>
+          <input type="hidden" name="subject" value="<?php echo $row['subject'];?>">  
           </td>
-          <td><?php echo $row['MESSAGE'];?>
-          <input type="hidden" name="MESSAGE" value="<?php echo $row['MESSAGE'];?>">
+          <td><?php echo $row['message'];?>
+          <input type="hidden" name="message" value="<?php echo $row['message'];?>">
           </td> 
           </tr>
         <?php

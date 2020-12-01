@@ -1,6 +1,6 @@
 <?php
 include "home.php";
-
+include_once "connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +73,7 @@ include "home.php";
 </body>
 </html>
 <?php
-$con=mysqli_connect("localhost","root","","tuition");
+// $con=mysqli_connect("localhost","root","","tuition");
 if(isset($_POST["submit1"]))
 { 
 

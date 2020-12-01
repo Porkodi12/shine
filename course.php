@@ -1,7 +1,7 @@
 <?php
 include "home.php";
-$con=mysqli_connect("localhost","root","","tuition");
-
+// $con=mysqli_connect("localhost","root","","tuition");
+include_once "connection.php";
 ?>
 
 <!DOCTYPE html>

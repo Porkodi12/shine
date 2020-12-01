@@ -1,6 +1,7 @@
 <?php
 include "home.php";
-$con=mysqli_connect("localhost","root","","tuition");
+include_once "connection.php";
+// $con=mysqli_connect("localhost","root","","tuition");
 if (isset($_POST['submit'])) {
   // $STUDENTID=$_POST["STUDENTID"];
   $NAME=$_POST["NAME"];
